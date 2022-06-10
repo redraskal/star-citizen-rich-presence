@@ -1,0 +1,16 @@
+[
+    {
+        "id": "invalid location 1d",
+        "name": "Main Menu",
+        "prefix": "In"
+    },
+    {
+        "id": "grimhex",
+        "name": "GrimHEX"
+    },
+    {
+        "id": "stantonstar",
+        "name": "Space",
+        "prefix": "In"
+    }
+]
