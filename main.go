@@ -9,6 +9,7 @@ import (
 	"github.com/JamesHovious/w32"
 	"github.com/hugolgst/rich-go/client"
 	"github.com/oliamb/cutter"
+	"github.com/redraskal/starcitizen/win"
 	"github.com/vardius/shutdown"
 )
 
@@ -26,7 +27,7 @@ func main() {
 
 func loop() {
 	println("Waiting for Star Citizen...")
-	hwnd := WaitForProcess(StarCitizenExe, CaptureInterval)
+	hwnd := win.WaitFor(StarCitizenExe, CaptureInterval)
 	println("Connecting to Discord...")
 	if err := client.Login(DiscordAppID); err != nil {
 		panic(err)
@@ -52,7 +53,7 @@ func capture_loop(a client.Activity, hwnd w32.HWND) {
 }
 
 func capture(hwnd w32.HWND) (SessionInfo, error) {
-	img, err := CaptureWindow(hwnd)
+	img, err := win.CaptureWindow(hwnd)
 	if err != nil {
 		return SessionInfo{}, err
 	}
