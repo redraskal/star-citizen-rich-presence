@@ -1,6 +1,6 @@
 # Star Citizen Rich Presence
 
-![image](https://user-images.githubusercontent.com/6241454/173168742-60219fc2-f5ac-4489-9cf1-9d0c67d0fd4f.png)
+![image](https://user-images.githubusercontent.com/6241454/173171746-f5b87ebc-3993-44c8-84df-45a3acc37362.png)
 
 TODO
 
