@@ -43,9 +43,6 @@ func loop() {
 		panic(err)
 	}
 	UpdateStartTimestamp(&DefaultActivity)
-	if err := UpdateProfile(&DefaultActivity); err != nil {
-		panic(err)
-	}
 	client.SetActivity(DefaultActivity)
 	capture_loop(DefaultActivity, hwnd)
 }

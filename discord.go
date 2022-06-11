@@ -39,6 +39,7 @@ func UpdateProfile(a *client.Activity) error {
 			Url:   "https://github.com/redraskal/star-citizen-rich-presence#installation",
 		},
 	}
+	DefaultActivity.Buttons = a.Buttons
 	return nil
 }
 
@@ -55,6 +56,11 @@ func UpdateActivity(a client.Activity, s utils.SessionInfo) error {
 	} else {
 		a.LargeImage = DefaultActivity.LargeImage
 		a.SmallImage = ""
+	}
+	if len(DefaultActivity.Buttons) == 0 {
+		if err := UpdateProfile(&a); err != nil {
+			println(err)
+		}
 	}
 	println("Activity:", s.Details)
 	a.Details = s.Details
