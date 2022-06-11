@@ -9,12 +9,8 @@ import (
 
 const ProfileEndpoint = "https://robertsspaceindustries.com/citizens/"
 
-func Path() string {
-	return "D:\\Roberts Space Industries\\StarCitizen\\LIVE"
-}
-
 func OpenLog() (*os.File, *bufio.Scanner, error) {
-	file, err := os.Open(path.Join(Path(), "Game.log"))
+	file, err := os.Open(path.Join(installPath, "Game.log"))
 	if err != nil {
 		return nil, nil, err
 	}

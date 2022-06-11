@@ -9,6 +9,7 @@ import (
 	"github.com/JamesHovious/w32"
 	"github.com/hugolgst/rich-go/client"
 	"github.com/oliamb/cutter"
+	"github.com/redraskal/star-citizen-rich-presence/rsi"
 	"github.com/redraskal/star-citizen-rich-presence/utils"
 	"github.com/redraskal/star-citizen-rich-presence/win"
 	"github.com/vardius/shutdown"
@@ -29,6 +30,7 @@ func main() {
 func loop() {
 	println("Waiting for Star Citizen...")
 	hwnd := win.WaitFor(StarCitizenExe, CaptureInterval)
+	rsi.UpdateInstallPath()
 	println("Connecting to Discord...")
 	if err := client.Login(DiscordAppID); err != nil {
 		panic(err)
