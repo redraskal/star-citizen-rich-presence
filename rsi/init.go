@@ -15,7 +15,7 @@ var (
 )
 
 func UpdateInstallPath() {
-	println("Detecting Star Citizen installation folder...")
+	println("\nDetecting Star Citizen installation folder...")
 	installPath = win.Path(LauncherExe)
 	if installPath == "" {
 		println("Could not locate installation folder.")

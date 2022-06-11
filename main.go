@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"image"
 	"image/png"
+	"os/exec"
 	"time"
 
 	"github.com/JamesHovious/w32"
@@ -20,6 +21,7 @@ const DiscordAppID = "983874700440645672"
 const CaptureInterval = 10 * time.Second
 
 func main() {
+	exec.Command("cmd", "/C", "title", "Star Citizen Rich Presence").Run()
 	println("--------------------------------------------------------")
 	println("Star Citizen Rich Presence by redraskal.")
 	println("https://github.com/redraskal/star-citizen-rich-presence")
@@ -36,7 +38,7 @@ func loop() {
 	hwnd := win.WaitFor(StarCitizenExe, CaptureInterval)
 	rsi.UpdateInstallPath()
 	rsi.RequireConsoleCmd()
-	println("Connecting to Discord...")
+	println("\nConnecting to Discord...")
 	if err := client.Login(DiscordAppID); err != nil {
 		panic(err)
 	}
