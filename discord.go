@@ -4,6 +4,7 @@ import (
 	"time"
 
 	"github.com/hugolgst/rich-go/client"
+	"github.com/redraskal/starcitizen/utils"
 )
 
 var (
@@ -22,7 +23,7 @@ func UpdateStartTimestamp(a *client.Activity) {
 	}
 }
 
-func UpdateActivity(a client.Activity, s SessionInfo) error {
+func UpdateActivity(a client.Activity, s utils.SessionInfo) error {
 	if len(s.Location.IDs) == 0 {
 		return nil
 	}

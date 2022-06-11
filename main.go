@@ -9,6 +9,7 @@ import (
 	"github.com/JamesHovious/w32"
 	"github.com/hugolgst/rich-go/client"
 	"github.com/oliamb/cutter"
+	"github.com/redraskal/starcitizen/utils"
 	"github.com/redraskal/starcitizen/win"
 	"github.com/vardius/shutdown"
 )
@@ -58,10 +59,10 @@ func capture_loop(a client.Activity, hwnd w32.HWND) {
 	capture_loop(a, hwnd)
 }
 
-func capture(hwnd w32.HWND) (SessionInfo, error) {
+func capture(hwnd w32.HWND) (utils.SessionInfo, error) {
 	img, err := win.CaptureWindow(hwnd)
 	if err != nil {
-		return SessionInfo{}, err
+		return utils.SessionInfo{}, err
 	}
 
 	cropped, err := cutter.Crop(img, cutter.Config{
@@ -73,16 +74,16 @@ func capture(hwnd w32.HWND) (SessionInfo, error) {
 		},
 	})
 	if err != nil {
-		return SessionInfo{}, err
+		return utils.SessionInfo{}, err
 	}
 
-	cropped = PrepareImageForOCR(cropped)
+	cropped = utils.PrepareImageForOCR(cropped)
 
 	// file, _ := os.Create("test.png")
 	// defer file.Close()
 	buf := new(bytes.Buffer)
 	if err = png.Encode(buf, cropped); err != nil {
-		return SessionInfo{}, err
+		return utils.SessionInfo{}, err
 	}
 	// if err = png.Encode(file, cropped); err != nil {
 	// 	return SessionInfo{}, err
@@ -90,12 +91,12 @@ func capture(hwnd w32.HWND) (SessionInfo, error) {
 
 	println("Running OCR...\n")
 
-	text, err := Tesseract(buf.Bytes())
+	text, err := utils.Tesseract(buf.Bytes())
 	if err != nil {
-		return SessionInfo{}, err
+		return utils.SessionInfo{}, err
 	}
 
 	println(text)
 
-	return ParseSessionInfo(text), nil
+	return utils.ParseSessionInfo(text), nil
 }
