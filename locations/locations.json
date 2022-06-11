@@ -8,6 +8,14 @@
     },
     {
         "ids": [
+            "stanton1"
+        ],
+        "name": "Hurston",
+        "prefix": "Around",
+        "image": "hurston"
+    },
+    {
+        "ids": [
             "grimhex",
             "grindex",
             "grimdex"
