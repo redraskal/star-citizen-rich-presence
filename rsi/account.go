@@ -9,6 +9,8 @@ import (
 
 const ProfileEndpoint = "https://robertsspaceindustries.com/citizens/"
 
+var username = ""
+
 func OpenFile(name string) (*os.File, *bufio.Scanner, error) {
 	file, err := os.Open(path.Join(installPath, name))
 	if err != nil {
@@ -18,6 +20,9 @@ func OpenFile(name string) (*os.File, *bufio.Scanner, error) {
 }
 
 func Username() (string, error) {
+	if username != "" {
+		return username, nil
+	}
 	file, scanner, err := OpenFile("Game.log")
 	if err != nil {
 		return "", err
@@ -27,7 +32,8 @@ func Username() (string, error) {
 	for scanner.Scan() {
 		line := scanner.Text()
 		if strings.Contains(line, "[CIG-net] User Login Success - Handle[") {
-			return strings.Split(strings.Split(line, "[CIG-net] User Login Success - Handle[")[1], "]")[0], nil
+			username = strings.Split(strings.Split(line, "[CIG-net] User Login Success - Handle[")[1], "]")[0]
+			return username, nil
 		}
 	}
 	return "", nil
