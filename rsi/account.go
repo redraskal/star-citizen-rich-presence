@@ -9,8 +9,8 @@ import (
 
 const ProfileEndpoint = "https://robertsspaceindustries.com/citizens/"
 
-func OpenLog() (*os.File, *bufio.Scanner, error) {
-	file, err := os.Open(path.Join(installPath, "Game.log"))
+func OpenFile(name string) (*os.File, *bufio.Scanner, error) {
+	file, err := os.Open(path.Join(installPath, name))
 	if err != nil {
 		return nil, nil, err
 	}
@@ -18,7 +18,7 @@ func OpenLog() (*os.File, *bufio.Scanner, error) {
 }
 
 func Username() (string, error) {
-	file, scanner, err := OpenLog()
+	file, scanner, err := OpenFile("Game.log")
 	if err != nil {
 		return "", err
 	}

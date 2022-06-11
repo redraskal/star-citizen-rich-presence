@@ -34,6 +34,10 @@ func UpdateProfile(a *client.Activity) error {
 			Label: "Profile",
 			Url:   rsi.ProfileEndpoint + username,
 		},
+		{
+			Label: "Download Mod",
+			Url:   "https://github.com/redraskal/star-citizen-rich-presence",
+		},
 	}
 	return nil
 }

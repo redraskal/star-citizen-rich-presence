@@ -15,10 +15,12 @@ Enhance your Discord profile with your Star Citizen status.
 - Crusader, moons, GrimHEX
 
 ## Installation
-1. Run `r_DisplayInfo = 2` in Star Citizen console or add to user.cfg
-2. [Install tesseract](https://github.com/UB-Mannheim/tesseract/wiki)
-3. Add the tesseract folder to your PATH environment variable (Usually C:\Program Files\Tesseract-OCR)
-4. Run the rich presence program in the terminal
+1. [Install tesseract](https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v5.1.0.20220510.exe)
+2. Add the tesseract folder to your PATH environment variable (Usually C:\Program Files\Tesseract-OCR)
+3. Download and run the rich presence mod
+4. Launch Star Citizen
+
+**Note:** `r_DisplayInfo = 2` (white text in top-right of screen) is required for this mod to function. We will automatically add the console command `r_DisplayInfo = 2` to the `StarCitizen\LIVE\user.cfg` file which will run every time you start the game. Restart the game upon installation or run the console command yourself in-game by pressing ` (tilda). To get rid of the white text, delete it from that file and do not run this mod.
 
 ## TODO
 - [ ] Support all major planets/hotspots

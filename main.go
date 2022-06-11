@@ -35,6 +35,7 @@ func loop() {
 	println("Waiting for Star Citizen...")
 	hwnd := win.WaitFor(StarCitizenExe, CaptureInterval)
 	rsi.UpdateInstallPath()
+	rsi.RequireConsoleCmd()
 	println("Connecting to Discord...")
 	if err := client.Login(DiscordAppID); err != nil {
 		panic(err)
