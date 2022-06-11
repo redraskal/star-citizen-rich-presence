@@ -10,7 +10,7 @@ import (
 func PrepareImageForOCR(img image.Image) image.Image {
 	img = imaging.Invert(img)
 	img = imaging.Grayscale(img)
-	img = imaging.Sharpen(img, 3.5)
+	img = imaging.Sharpen(img, 10)
 	img = imaging.AdjustFunc(img, func(c color.NRGBA) color.NRGBA {
 		if c.R < 60 && c.G < 60 && c.B < 60 {
 			return c

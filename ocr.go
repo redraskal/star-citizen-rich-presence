@@ -3,12 +3,13 @@ package main
 import (
 	"bufio"
 	"strings"
+
+	"github.com/redraskal/starcitizen/locations"
 )
 
 type SessionInfo struct {
-	LocationID string
-	Location   string
-	Details    string
+	Location locations.Location
+	Details  string
 }
 
 func ParseSessionInfo(text string) SessionInfo {
@@ -24,25 +25,10 @@ func ParseSessionInfo(text string) SessionInfo {
 		println("DEBUG:", line)
 		switch {
 		case strings.HasPrefix(line, "current player location : "):
-			s.LocationID = strings.TrimPrefix(line, "current player location : ")
-			s.Location = GetLocationName(s.LocationID)
+			id := strings.TrimPrefix(line, "current player location : ")
+			s.Location = locations.Find(id)
+			s.Details = s.Location.Prefix + " " + s.Location.Name
 		}
 	}
-	setDetails(&s)
 	return s
-}
-
-func setDetails(s *SessionInfo) {
-	switch s.Location {
-	case "":
-		break
-	case "Main Menu":
-		s.Details = "In Main Menu"
-	case "Space":
-		s.Details = "In Space"
-	case "Unknown":
-		s.Details = "In Unknown Territory"
-	default:
-		s.Details = "At " + s.Location
-	}
 }

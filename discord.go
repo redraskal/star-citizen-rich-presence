@@ -22,14 +22,21 @@ func UpdateStartTimestamp(a *client.Activity) {
 	}
 }
 
-func UpdateActivity(a client.Activity, s SessionInfo) {
-	if s.LocationID == "" {
-		return
+func UpdateActivity(a client.Activity, s SessionInfo) error {
+	if len(s.Location.IDs) == 0 {
+		return nil
 	}
 	if s.Details == a.Details {
-		return
+		return nil
+	}
+	if s.Location.Image != "" {
+		a.LargeImage = s.Location.Image
+		a.SmallImage = DefaultActivity.LargeImage
+	} else {
+		a.LargeImage = DefaultActivity.LargeImage
+		a.SmallImage = ""
 	}
 	println("Activity:", s.Details)
 	a.Details = s.Details
-	client.SetActivity(a)
+	return client.SetActivity(a)
 }

@@ -1,15 +1,48 @@
 [
     {
-        "id": "invalid location 1d",
+        "ids": [
+            "invalid location 1d"
+        ],
         "name": "Main Menu",
         "prefix": "In"
     },
     {
-        "id": "grimhex",
-        "name": "GrimHEX"
+        "ids": [
+            "grimhex",
+            "grindex",
+            "grimdex"
+        ],
+        "name": "GrimHEX",
+        "image": "grimhex"
     },
     {
-        "id": "stantonstar",
+        "ids": [
+            "stanton2"
+        ],
+        "name": "Crusader",
+        "prefix": "Around",
+        "image": "crusader"
+    },
+    {
+        "ids": [
+            "stanton2c"
+        ],
+        "name": "Yela",
+        "prefix": "Around",
+        "image": "yela"
+    },
+    {
+        "ids": [
+            "stanton2b"
+        ],
+        "name": "Daymar",
+        "prefix": "Around",
+        "image": "daymar"
+    },
+    {
+        "ids": [
+            "stantonstar"
+        ],
         "name": "Space",
         "prefix": "In"
     }

@@ -46,8 +46,14 @@ func capture_loop(a client.Activity, hwnd w32.HWND) {
 		loop()
 		return
 	}
-	println("\nCurrent Location:", s.Location)
-	UpdateActivity(a, s)
+	println("\nCurrent Location:", s.Location.Name)
+	if err = UpdateActivity(a, s); err != nil {
+		println(err.Error())
+		client.Logout()
+		time.Sleep(CaptureInterval)
+		loop()
+		return
+	}
 	time.Sleep(CaptureInterval)
 	capture_loop(a, hwnd)
 }
