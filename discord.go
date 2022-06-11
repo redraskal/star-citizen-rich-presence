@@ -36,7 +36,7 @@ func UpdateProfile(a *client.Activity) error {
 		},
 		{
 			Label: "Download Mod",
-			Url:   "https://github.com/redraskal/star-citizen-rich-presence",
+			Url:   "https://github.com/redraskal/star-citizen-rich-presence#installation",
 		},
 	}
 	return nil
