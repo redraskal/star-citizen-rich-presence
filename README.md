@@ -15,3 +15,4 @@ TODO
 - [ ] Create installer (it should install tesseract too)
 - [ ] Automate builds on GitHub
 - [ ] Support mission rich presence
+- [ ] Support all major locations
