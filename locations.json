@@ -52,6 +52,7 @@
             "stantonstar"
         ],
         "name": "Space",
-        "prefix": "In"
+        "prefix": "In",
+        "image": "offradar"
     }
 ]
