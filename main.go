@@ -16,7 +16,7 @@ import (
 
 const StarCitizenExe = "StarCitizen.exe"
 const DiscordAppID = "983874700440645672"
-const CaptureInterval = 5 * time.Second
+const CaptureInterval = 10 * time.Second
 
 func main() {
 	go shutdown.GracefulStop(func() {
