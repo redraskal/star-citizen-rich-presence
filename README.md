@@ -8,3 +8,9 @@ TODO
 1. [Install tesseract](https://github.com/UB-Mannheim/tesseract/wiki)
 2. Add the tesseract folder to your PATH environment variable (Usually C:\Program Files\Tesseract-OCR)
 3. Run the rich presence program in the terminal
+
+## TODO
+- [ ] Cleanup code
+- [ ] Create installer (it should install tesseract too)
+- [ ] Automate builds on GitHub
+- [ ] Support mission rich presence
