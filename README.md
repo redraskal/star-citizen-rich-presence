@@ -23,8 +23,8 @@ Enhance your Discord profile with your Star Citizen status.
 
 ## TODO
 - [ ] Support all major planets/hotspots
-- [ ] Create convenient installer (it should install tesseract too)
 - [ ] Support mission rich presence
 - [ ] Cleanup code
+- [ ] Option to automatically launch the mod
 - [ ] Automate builds on GitHub
 - [ ] Train font on Tesseract
