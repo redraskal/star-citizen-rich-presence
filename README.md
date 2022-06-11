@@ -5,9 +5,10 @@
 TODO
 
 ## Installation
-1. [Install tesseract](https://github.com/UB-Mannheim/tesseract/wiki)
-2. Add the tesseract folder to your PATH environment variable (Usually C:\Program Files\Tesseract-OCR)
-3. Run the rich presence program in the terminal
+1. Run `r_DisplayInfo = 2` in Star Citizen console or add to user.cfg
+2. [Install tesseract](https://github.com/UB-Mannheim/tesseract/wiki)
+3. Add the tesseract folder to your PATH environment variable (Usually C:\Program Files\Tesseract-OCR)
+4. Run the rich presence program in the terminal
 
 ## TODO
 - [ ] Cleanup code
