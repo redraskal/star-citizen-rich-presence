@@ -16,3 +16,4 @@ TODO
 - [ ] Automate builds on GitHub
 - [ ] Support mission rich presence
 - [ ] Support all major locations
+- [ ] Train font on Tesseract

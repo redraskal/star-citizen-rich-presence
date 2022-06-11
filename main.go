@@ -20,6 +20,10 @@ const DiscordAppID = "983874700440645672"
 const CaptureInterval = 10 * time.Second
 
 func main() {
+	println("--------------------------------------------------------")
+	println("Star Citizen Rich Presence by redraskal.")
+	println("https://github.com/redraskal/star-citizen-rich-presence")
+	println("--------------------------------------------------------\n")
 	go shutdown.GracefulStop(func() {
 		println("Disconnecting from Discord...")
 		client.Logout()
