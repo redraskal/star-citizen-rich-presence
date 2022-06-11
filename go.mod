@@ -1,4 +1,4 @@
-module github.com/redraskal/starcitizen
+module github.com/redraskal/star-citizen-rich-presence
 
 go 1.18
 

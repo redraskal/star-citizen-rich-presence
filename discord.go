@@ -4,12 +4,12 @@ import (
 	"time"
 
 	"github.com/hugolgst/rich-go/client"
-	"github.com/redraskal/starcitizen/utils"
+	"github.com/redraskal/star-citizen-rich-presence/rsi"
+	"github.com/redraskal/star-citizen-rich-presence/utils"
 )
 
 var (
 	DefaultActivity = client.Activity{
-		State:      "No Active Mission",
 		Details:    "Starting Game",
 		LargeImage: "logo",
 		Timestamps: &client.Timestamps{},
@@ -21,6 +21,21 @@ func UpdateStartTimestamp(a *client.Activity) {
 	a.Timestamps = &client.Timestamps{
 		Start: &time,
 	}
+}
+
+func UpdateProfile(a *client.Activity) error {
+	username, err := rsi.Username()
+	if err != nil {
+		return err
+	}
+	println("Username:", username)
+	a.Buttons = []*client.Button{
+		{
+			Label: "Profile",
+			Url:   rsi.ProfileEndpoint + username,
+		},
+	}
+	return nil
 }
 
 func UpdateActivity(a client.Activity, s utils.SessionInfo) error {

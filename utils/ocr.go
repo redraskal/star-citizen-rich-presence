@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"strings"
 
-	"github.com/redraskal/starcitizen/locations"
+	"github.com/redraskal/star-citizen-rich-presence/locations"
 )
 
 type SessionInfo struct {

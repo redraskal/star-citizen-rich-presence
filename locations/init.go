@@ -55,7 +55,8 @@ func Unknown() Location {
 		IDs: []string{
 			"unknown",
 		},
-		Name:   "Unknown Territory",
-		Prefix: "In",
+		Name:   "Radar",
+		Prefix: "Off",
+		Image:  "offradar",
 	}
 }

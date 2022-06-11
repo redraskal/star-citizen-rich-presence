@@ -9,8 +9,8 @@ import (
 	"github.com/JamesHovious/w32"
 	"github.com/hugolgst/rich-go/client"
 	"github.com/oliamb/cutter"
-	"github.com/redraskal/starcitizen/utils"
-	"github.com/redraskal/starcitizen/win"
+	"github.com/redraskal/star-citizen-rich-presence/utils"
+	"github.com/redraskal/star-citizen-rich-presence/win"
 	"github.com/vardius/shutdown"
 )
 
@@ -34,6 +34,9 @@ func loop() {
 		panic(err)
 	}
 	UpdateStartTimestamp(&DefaultActivity)
+	if err := UpdateProfile(&DefaultActivity); err != nil {
+		panic(err)
+	}
 	client.SetActivity(DefaultActivity)
 	capture_loop(DefaultActivity, hwnd)
 }
