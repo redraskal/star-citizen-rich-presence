@@ -1,8 +1,8 @@
 package locations
 
 import (
+	_ "embed"
 	"encoding/json"
-	"os"
 	"strings"
 
 	"github.com/agusnavce/ta"
@@ -17,6 +17,8 @@ type Location struct {
 }
 
 var (
+	//go:embed locations.json
+	file      []byte
 	locations = make([]Location, 0)
 	index     = make(map[string]int)
 	suggest   = ta.NewSpellModel()
@@ -24,11 +26,7 @@ var (
 
 func init() {
 	println("Loading locations...")
-	file, err := os.ReadFile("locations.json")
-	if err != nil {
-		panic(err)
-	}
-	if err = json.Unmarshal(file, &locations); err != nil {
+	if err := json.Unmarshal(file, &locations); err != nil {
 		panic(err)
 	}
 	for i, location := range locations {
