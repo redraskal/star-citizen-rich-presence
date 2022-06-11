@@ -28,3 +28,8 @@ Enhance your Discord profile with your Star Citizen status.
 - [ ] Option to automatically launch the mod
 - [ ] Automate builds on GitHub
 - [ ] Train font on Tesseract
+
+## Image Credits
+https://starcitizen.tools
+
+[GrimHEX Image](https://robertsspaceindustries.com/community/citizen-spotlight/12250-GRIM-HEX-4k-Wallpaper-Collection)
