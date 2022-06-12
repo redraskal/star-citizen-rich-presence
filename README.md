@@ -14,6 +14,7 @@ Enhance your Discord profile with your Star Citizen status.
 - Space
 - Crusader, moons, GrimHEX, Port Olisar
 - Hurston
+- microTech
 
 ## Installation
 1. [Install tesseract](https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v5.1.0.20220510.exe)
