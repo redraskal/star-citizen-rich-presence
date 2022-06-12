@@ -64,6 +64,21 @@
     },
     {
         "ids": [
+            "stanton3"
+        ],
+        "name": "ArcCorp",
+        "prefix": "Around",
+        "image": "arccorp"
+    },
+    {
+        "ids": [
+            "stanton3 area18"
+        ],
+        "name": "Area18",
+        "image": "area18"
+    },
+    {
+        "ids": [
             "stanton4"
         ],
         "name": "microTech",
