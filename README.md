@@ -12,7 +12,7 @@ Enhance your Discord profile with your Star Citizen status.
 ## Supported locations
 - Main menu
 - Space
-- Crusader, moons, GrimHEX
+- Crusader, moons, GrimHEX, Port Olisar
 - Hurston
 
 ## Installation

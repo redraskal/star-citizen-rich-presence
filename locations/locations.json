@@ -25,6 +25,13 @@
     },
     {
         "ids": [
+            "portolisar"
+        ],
+        "name": "Port Olisar",
+        "image": "portolisar"
+    },
+    {
+        "ids": [
             "stanton2"
         ],
         "name": "Crusader",
